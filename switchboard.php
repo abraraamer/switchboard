@@ -734,3 +734,22 @@ if ( ! class_exists( 'Switchboard' ) && defined( 'ABSPATH' ) ) {
 	 */
 	new Switchboard();
 }
+
+function show_admin_notice_about_option_tree(){
+		?>
+		<div class="notice notice-success is-dismissible">
+        <p><?php esc_html_e('Option tree has been replaced by Switchboard and it has been disabled.', 'option-tree'); ?></p>
+    </div> 
+	<?php
+}
+
+add_action('admin_init', 'check_for_option_tree');
+function check_for_option_tree() {
+	//check if plugin option-tree/ot-loader is active, if so, disable it and put up a message that we did so.
+	if(is_plugin_active('option-tree/ot-loader.php')){
+		//disable it
+		deactivate_plugins('option-tree/ot-loader.php');
+		add_action('admin_notices', 'show_admin_notice_about_option_tree');
+
+	}
+}
