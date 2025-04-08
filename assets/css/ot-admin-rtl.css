@@ -1,5 +1,5 @@
 /* -------------------------------------------------- 
-  :: OptionTree Font
+  :: Switchboard Font
   ---------------------------------------------------*/
 .ui-tabs li > a [class^="ot-icon-"], 
 .ui-tabs li > a [class*=" ot-icon-"] {
@@ -18,7 +18,7 @@
 }
 
 /* -------------------------------------------------- 
-  :: OptionTree Wrappers
+  :: Switchboard Wrappers
   ---------------------------------------------------*/
 #option-tree-settings-api > .ui-tabs {
   margin: 0px 2px 0 5px;
@@ -429,7 +429,7 @@ div.option-tree-ui-media-wrap {
 }
 
 /* -------------------------------------------------- 
-  :: OptionTree UI Buttons 
+  :: Switchboard UI Buttons 
   ---------------------------------------------------*/
 .option-tree-ui-button {
   float: right !important;
@@ -469,7 +469,7 @@ button.reset-settings {
 }
 
 /* -------------------------------------------------- 
-  :: OptionTree UI Button Icons 
+  :: Switchboard UI Button Icons 
   ---------------------------------------------------*/
 .option-tree-ui-button .icon {
   float: right;

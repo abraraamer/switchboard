@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: OptionTree
+ * Plugin Name: Switchboard
  * Plugin URI:  https://github.com/valendesigns/option-tree/
  * Description: Theme Options UI Builder for WordPress. A simple way to create & save Theme Options and Meta Boxes for free or premium themes.
  * Version:     2.7.3
@@ -9,7 +9,7 @@
  * License:     GPLv2 or later
  * Text Domain: option-tree
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && true === OT_PLUGIN_MODE && defined( 'ABSPATH' ) ) {
@@ -17,10 +17,10 @@ if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && true === OT_P
 	add_filter( 'ot_theme_mode', '__return_false', 999 );
 
 	/**
-	 * Forces Plugin Mode when OptionTree is already loaded and displays an admin notice.
+	 * Forces Plugin Mode when Switchboard is already loaded and displays an admin notice.
 	 */
 	function ot_conflict_notice() {
-		echo '<div class="error"><p>' . esc_html__( 'OptionTree is installed as a plugin and also embedded in your current theme. Please deactivate the plugin to load the theme dependent version of OptionTree, and remove this warning.', 'option-tree' ) . '</p></div>';
+		echo '<div class="error"><p>' . esc_html__( 'Switchboard is installed as a plugin and also embedded in your current theme. Please deactivate the plugin to load the theme dependent version of Switchboard, and remove this warning.', 'option-tree' ) . '</p></div>';
 	}
 
 	add_action( 'admin_notices', 'ot_conflict_notice' );
@@ -29,7 +29,7 @@ if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && true === OT_P
 if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 
 	/**
-	 * OptionTree loader class.
+	 * Switchboard loader class.
 	 */
 	class OT_Loader {
 
@@ -43,12 +43,12 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 		 */
 		public function __construct() {
 
-			// Load OptionTree.
+			// Load Switchboard.
 			add_action( 'after_setup_theme', array( $this, 'load_option_tree' ), 1 );
 		}
 
 		/**
-		 * OptionTree loads on the 'after_setup_theme' action.
+		 * Switchboard loads on the 'after_setup_theme' action.
 		 *
 		 * @todo Load immediately.
 		 *
@@ -73,7 +73,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 		/**
 		 * Constants.
 		 *
-		 * Defines the constants for use within OptionTree. Constants
+		 * Defines the constants for use within Switchboard. Constants
 		 * are prefixed with 'OT_' to avoid any naming collisions.
 		 *
 		 * @access private
@@ -89,7 +89,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * For developers: Theme mode.
 			 *
-			 * Run a filter and set to true to enable OptionTree theme mode.
+			 * Run a filter and set to true to enable Switchboard theme mode.
 			 * You must have this files parent directory inside of
 			 * your themes root directory. As well, you must include
 			 * a reference to this file in your themes functions.php.
@@ -101,7 +101,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * For developers: Child Theme mode. TODO document
 			 *
-			 * Run a filter and set to true to enable OptionTree child theme mode.
+			 * Run a filter and set to true to enable Switchboard child theme mode.
 			 * You must have this files parent directory inside of
 			 * your themes root directory. As well, you must include
 			 * a reference to this file in your themes functions.php.
@@ -172,7 +172,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * For developers: Custom Theme Option page
 			 *
-			 * Run a filter and set to false if you want to hide the OptionTree
+			 * Run a filter and set to false if you want to hide the Switchboard
 			 * Theme Option page and build your own.
 			 *
 			 * @since 2.1
@@ -182,7 +182,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * For developers: Meta Boxes.
 			 *
-			 * Run a filter and set to false to keep OptionTree from
+			 * Run a filter and set to false to keep Switchboard from
 			 * loading the meta box resources.
 			 *
 			 * @since 2.0
@@ -207,7 +207,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * For developers: Post Formats.
 			 *
-			 * Run a filter and set to true if you want OptionTree
+			 * Run a filter and set to true if you want Switchboard
 			 * to load meta boxes for post formats.
 			 *
 			 * @since 2.4.0
@@ -624,7 +624,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 				return $settings;
 			}
 
-			// Set the OptionTree post ID.
+			// Set the Switchboard post ID.
 			if ( ! is_object( $post ) ) {
 				$post_id = isset( $_GET['post'] ) ? absint( $_GET['post'] ) : ( isset( $_GET['post_ID'] ) ? absint( $_GET['post_ID'] ) : 0 ); // phpcs:ignore
 				if ( 0 >= $post_id && function_exists( 'ot_get_media_post_ID' ) ) {
@@ -719,7 +719,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 
 				// Once is enough.
 				remove_filter( 'gettext', array( $this, 'ot_change_image_button' ) );
-				return apply_filters( 'ot_upload_text', esc_html__( 'Send to OptionTree', 'option-tree' ) );
+				return apply_filters( 'ot_upload_text', esc_html__( 'Send to Switchboard', 'option-tree' ) );
 
 			}
 
@@ -728,7 +728,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 	}
 
 	/**
-	 * Instantiate the OptionTree loader class.
+	 * Instantiate the Switchboard loader class.
 	 *
 	 * @since 2.0
 	 */

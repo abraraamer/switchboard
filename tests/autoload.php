@@ -2,7 +2,7 @@
 /**
  * Loads the wp-tests-config.php file.
  *
- * @package OptionTree
+ * @package Switchboard
  * @since 2.7.0
  */
 

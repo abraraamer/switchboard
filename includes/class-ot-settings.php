@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Settings.
+ * Switchboard Settings.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'OT_VERSION' ) ) {
 if ( ! class_exists( 'OT_Settings' ) ) {
 
 	/**
-	 * OptionTree Settings class.
+	 * Switchboard Settings class.
 	 *
 	 * This class loads all the methods and helpers specific to a Settings page.
 	 */
@@ -264,10 +264,10 @@ if ( ! class_exists( 'OT_Settings' ) ) {
 
 						echo '<ul id="option-tree-header">';
 
-						$link = '<a href="https://wordpress.org/plugins/option-tree/" target="_blank">' . esc_html__( 'OptionTree', 'option-tree' ) . '</a>';
+						$link = '<a href="https://wordpress.org/plugins/option-tree/" target="_blank">' . esc_html__( 'Switchboard', 'option-tree' ) . '</a>';
 						echo '<li id="option-tree-logo">' . wp_kses_post( apply_filters( 'ot_header_logo_link', $link, $page['id'] ) ) . '</li>';
 
-						echo '<li id="option-tree-version"><span>' . esc_html( apply_filters( 'ot_header_version_text', 'OptionTree ' . OT_VERSION, $page['id'] ) ) . '</span></li>';
+						echo '<li id="option-tree-version"><span>' . esc_html( apply_filters( 'ot_header_version_text', 'Switchboard ' . OT_VERSION, $page['id'] ) ) . '</span></li>';
 
 						// Add additional theme specific links here.
 						do_action( 'ot_header_list', $page['id'] );

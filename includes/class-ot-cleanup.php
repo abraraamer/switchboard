@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Cleanup.
+ * Switchboard Cleanup.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -12,9 +12,9 @@ if ( ! defined( 'OT_VERSION' ) ) {
 if ( ! class_exists( 'OT_Cleanup' ) ) {
 
 	/**
-	 * OptionTree Cleanup class.
+	 * Switchboard Cleanup class.
 	 *
-	 * This class loads all the OptionTree Cleanup methods and helpers.
+	 * This class loads all the Switchboard Cleanup methods and helpers.
 	 */
 	class OT_Cleanup {
 
@@ -36,7 +36,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 			// Load styles.
 			add_action( 'admin_head', array( $this, 'styles' ), 1 );
 
-			// Maybe Clean up OptionTree.
+			// Maybe Clean up Switchboard.
 			add_action( 'admin_menu', array( $this, 'maybe_cleanup' ), 100 );
 
 			// Increase timeout if allowed.
@@ -54,7 +54,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 		}
 
 		/**
-		 * Check if OptionTree needs to be cleaned up from a previous install.
+		 * Check if Switchboard needs to be cleaned up from a previous install.
 		 *
 		 * @access public
 		 * @since  2.4.6
@@ -80,7 +80,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
 				$theme_check_bs = 'add_menu_' . 'page'; // phpcs:ignore
 
-				$theme_check_bs( apply_filters( 'ot_cleanup_page_title', __( 'OptionTree Cleanup', 'option-tree' ) ), apply_filters( 'ot_cleanup_menu_title', __( 'OptionTree Cleanup', 'option-tree' ) ), 'edit_theme_options', 'ot-cleanup', array( $this, 'options_page' ) );
+				$theme_check_bs( apply_filters( 'ot_cleanup_page_title', __( 'Switchboard Cleanup', 'option-tree' ) ), apply_filters( 'ot_cleanup_menu_title', __( 'Switchboard Cleanup', 'option-tree' ) ), 'edit_theme_options', 'ot-cleanup', array( $this, 'options_page' ) );
 			}
 		}
 
@@ -93,10 +93,10 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 		public function cleanup_notice() {
 
 			if ( 'appearance_page_ot-cleanup' !== get_current_screen()->id ) {
-				$link = sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=ot-cleanup' ), apply_filters( 'ot_cleanup_menu_title', esc_html__( 'OptionTree Cleanup', 'option-tree' ) ) );
+				$link = sprintf( '<a href="%s">%s</a>', admin_url( 'themes.php?page=ot-cleanup' ), apply_filters( 'ot_cleanup_menu_title', esc_html__( 'Switchboard Cleanup', 'option-tree' ) ) );
 
 				/* translators: %s: internal admin page URL */
-				echo '<div class="update-nag">' . sprintf( esc_html__( 'OptionTree has outdated data that should be removed. Please go to %s for more information.', 'option-tree' ), $link ) . '</div>'; // phpcs:ignore
+				echo '<div class="update-nag">' . sprintf( esc_html__( 'Switchboard has outdated data that should be removed. Please go to %s for more information.', 'option-tree' ), $link ) . '</div>'; // phpcs:ignore
 			}
 		}
 
@@ -123,7 +123,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 
 			echo '<div class="wrap">';
 
-			echo '<h2>' . apply_filters( 'ot_cleanup_page_title', esc_html__( 'OptionTree Cleanup', 'option-tree' ) ) . '</h2>'; // phpcs:ignore
+			echo '<h2>' . apply_filters( 'ot_cleanup_page_title', esc_html__( 'Switchboard Cleanup', 'option-tree' ) ) . '</h2>'; // phpcs:ignore
 
 			if ( $ot_maybe_cleanup_posts ) {
 
@@ -132,11 +132,11 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 				echo '<h3>' . esc_html__( 'Multiple Media Posts', 'option-tree' ) . '</h3>';
 
 				/* translators: %1$s: number of media posts, %2$s: media post type, %3$s: table name */
-				$string = esc_html__( 'There are currently %1$s OptionTree media posts in your database. At some point in the past, a version of OptionTree added multiple %2$s media post objects cluttering up your %3$s table. There is no associated risk or harm that these posts have caused other than to add size to your overall database. Thankfully, there is a way to remove all these orphaned media posts and get your database cleaned up.', 'option-tree' );
+				$string = esc_html__( 'There are currently %1$s Switchboard media posts in your database. At some point in the past, a version of Switchboard added multiple %2$s media post objects cluttering up your %3$s table. There is no associated risk or harm that these posts have caused other than to add size to your overall database. Thankfully, there is a way to remove all these orphaned media posts and get your database cleaned up.', 'option-tree' );
 				echo '<p>' . sprintf( $string, '<code>' . number_format( count( $posts ) ) . '</code>', '<tt>option-tree</tt>', '<tt>' . $wpdb->posts . '</tt>' ) . '</p>'; // phpcs:ignore
 
 				/* translators: %s: number of media posts being deleted  */
-				echo '<p>' . sprintf( esc_html__( 'By clicking the button below, OptionTree will delete %s records and consolidate them into one single OptionTree media post for uploading attachments to. Additionally, the attachments will have their parent ID updated to the correct media post.', 'option-tree' ), '<code>' . number_format( count( $posts ) - 1 ) . '</code>' ) . '</p>';
+				echo '<p>' . sprintf( esc_html__( 'By clicking the button below, Switchboard will delete %s records and consolidate them into one single Switchboard media post for uploading attachments to. Additionally, the attachments will have their parent ID updated to the correct media post.', 'option-tree' ), '<code>' . number_format( count( $posts ) - 1 ) . '</code>' ) . '</p>';
 
 				echo '<p><strong>' . esc_html__( 'This could take a while to fully process depending on how many records you have in your database, so please be patient and wait for the script to finish.', 'option-tree' ) . '</strong></p>';
 
@@ -235,7 +235,7 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 				echo '<h3>' . esc_html__( 'Outdated Table', 'option-tree' ) . '</h3>';
 
 				/* translators: %s: table name  */
-				$string = esc_html__( 'If you have upgraded from an old 1.x version of OptionTree at some point, you have an extra %s table in your database that can be removed. It\'s not hurting anything, but does not need to be there. If you want to remove it. Click the button below.', 'option-tree' );
+				$string = esc_html__( 'If you have upgraded from an old 1.x version of Switchboard at some point, you have an extra %s table in your database that can be removed. It\'s not hurting anything, but does not need to be there. If you want to remove it. Click the button below.', 'option-tree' );
 
 				echo '<p>' . sprintf( $string, '<tt>' . $table_name . '</tt>' ) . '</p>'; // phpcs:ignore
 

@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Settings Page Functions.
+ * Switchboard Settings Page Functions.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -39,7 +39,7 @@ if ( ! function_exists( 'ot_type_theme_options_ui' ) ) {
 
 		/* translators: %s: link to documentation */
 		$string = esc_html__( 'If you\'re unsure or not completely positive that you should be editing these settings, you should read the %s first.', 'option-tree' );
-		echo '<p class="warning">' . sprintf( $string, '<a href="' . esc_url_raw( get_admin_url( $blog_id, 'admin.php?page=ot-documentation' ) ) . '"><code>' . esc_html__( 'OptionTree->Documentation', 'option-tree' ) . '</code></a>' ) . '</p>'; // phpcs:ignore
+		echo '<p class="warning">' . sprintf( $string, '<a href="' . esc_url_raw( get_admin_url( $blog_id, 'admin.php?page=ot-documentation' ) ) . '"><code>' . esc_html__( 'Switchboard->Documentation', 'option-tree' ) . '</code></a>' ) . '</p>'; // phpcs:ignore
 
 		echo '<h4>' . esc_html__( 'Things could break or be improperly displayed to the end-user if you do one of the following:', 'option-tree' ) . '</h4>';
 		echo '<p class="warning">' . esc_html__( 'Give two sections the same ID, give two settings the same ID, give two contextual help content areas the same ID, don\'t create any settings, or have a section at the end of the settings list.', 'option-tree' ) . '</p>';
@@ -325,7 +325,7 @@ if ( ! function_exists( 'ot_type_export_settings' ) ) {
 
 		/* translators: %1$s: visual path to import, %2$s: visual path to settings */
 		$string = esc_html__( 'Export your Settings by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the %1$s %1$s textarea on another web site.', 'option-tree' );
-		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Settings', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
+		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Settings', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '</div>';
 
@@ -360,7 +360,7 @@ if ( ! function_exists( 'ot_type_export_data' ) ) {
 
 		/* translators: %1$s: visual path to import, %2$s: visual path to theme options */
 		$string = esc_html__( 'Export your Theme Options data by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the %1$s %2$s textarea on another web site.', 'option-tree' );
-		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Theme Options', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
+		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Theme Options', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '</div>';
 
@@ -395,7 +395,7 @@ if ( ! function_exists( 'ot_type_export_layouts' ) ) {
 
 		/* translators: %1$s: visual path to import, %2$s: visual path to layouts */
 		$string = esc_html__( 'Export your Layouts by highlighting this text and doing a copy/paste into a blank .txt file. Then save the file for importing into another install of WordPress later. Alternatively, you could just paste it into the %1$s %2$s textarea on another web site.', 'option-tree' );
-		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Layouts', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
+		echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Import', 'option-tree' ) . '</code>', '<code>' . esc_html__( 'Layouts', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '</div>';
 
@@ -439,7 +439,7 @@ if ( ! function_exists( 'ot_type_modify_layouts' ) ) {
 		if ( OT_SHOW_DOCS ) {
 			/* translators: %s: visual path to layouts overview */
 			$string = esc_html__( 'Visit %s to see a more in-depth description of what layouts are and how to use them.', 'option-tree' );
-			echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Documentation->Layouts Overview', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
+			echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Documentation->Layouts Overview', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore
 		}
 
 		echo '</div>';

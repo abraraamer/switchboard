@@ -2,7 +2,7 @@
 /**
  * Unit Tests bootstrap file.
  *
- * @package OptionTree
+ * @package Switchboard
  * @since 2.7.0
  */
 

@@ -60,7 +60,7 @@
 # add_filter( 'ot_post_formats', '__return_true' );
 
 /**
- * OptionTree in Theme Mode
+ * Switchboard in Theme Mode
  */
 # require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 

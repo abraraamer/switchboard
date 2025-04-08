@@ -5,7 +5,7 @@
  * Limit loading these function only when needed
  * and not in the front end.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -111,8 +111,8 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 		$ot_register_pages_array = array(
 			array(
 				'id'          => 'ot',
-				'page_title'  => esc_html__( 'OptionTree', 'option-tree' ),
-				'menu_title'  => esc_html__( 'OptionTree', 'option-tree' ),
+				'page_title'  => esc_html__( 'Switchboard', 'option-tree' ),
+				'menu_title'  => esc_html__( 'Switchboard', 'option-tree' ),
 				'capability'  => 'edit_theme_options',
 				'menu_slug'   => 'ot-settings',
 				'icon_url'    => null,
@@ -881,7 +881,7 @@ if ( ! function_exists( 'ot_admin_scripts' ) ) {
 	 * Setup the default admin scripts.
 	 *
 	 * @uses add_thickbox() Include Thickbox for file uploads.
-	 * @uses wp_enqueue_script() Add OptionTree scripts.
+	 * @uses wp_enqueue_script() Add Switchboard scripts.
 	 * @uses wp_localize_script() Used to include arbitrary Javascript data.
 	 *
 	 * @access public
@@ -927,7 +927,7 @@ if ( ! function_exists( 'ot_admin_scripts' ) ) {
 		$localized_array = array(
 			'ajax'                  => admin_url( 'admin-ajax.php' ),
 			'nonce'                 => wp_create_nonce( 'option_tree' ),
-			'upload_text'           => apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'option-tree' ) ),
+			'upload_text'           => apply_filters( 'ot_upload_text', __( 'Send to Switchboard', 'option-tree' ) ),
 			'remove_media_text'     => esc_html__( 'Remove Media', 'option-tree' ),
 			'reset_agree'           => esc_html__( 'Are you sure you want to reset back to the defaults?', 'option-tree' ),
 			'remove_no'             => esc_html__( 'You can\'t remove this! But you can edit the values.', 'option-tree' ),
@@ -1672,11 +1672,11 @@ if ( ! function_exists( 'ot_export_php_settings_array' ) ) {
 add_action( 'init', 'custom_theme_options' );
 
 /**
- * Build the custom settings & update OptionTree.
+ * Build the custom settings & update Switchboard.
  */
 function custom_theme_options() {
   
-	// OptionTree is not loaded yet, or this is not an admin request.
+	// Switchboard is not loaded yet, or this is not an admin request.
 	if ( ! function_exists( 'ot_settings_id' ) || ! is_admin() ) {
 		return false;
 	}
@@ -1684,7 +1684,7 @@ function custom_theme_options() {
 	// Get a copy of the saved settings array.
 	\$saved_settings = get_option( ot_settings_id(), array() );
 
-	// Custom settings array that will eventually be passes to the OptionTree Settings API Class.
+	// Custom settings array that will eventually be passes to the Switchboard Settings API Class.
 	\$custom_settings = array($build_settings
 	);
 
@@ -1696,7 +1696,7 @@ function custom_theme_options() {
 		update_option( ot_settings_id(), \$custom_settings ); 
 	}
 
-	// Lets OptionTree know the UI Builder is being overridden.
+	// Lets Switchboard know the UI Builder is being overridden.
 	global \$ot_has_custom_theme_options;
 	\$ot_has_custom_theme_options = true;
 }
@@ -4160,7 +4160,7 @@ if ( ! function_exists( 'ot_settings_view' ) ) {
 				</div>
 				<div class="format-settings">
 					<div class="format-setting type-text wide-desc">
-						<div class="description">' . sprintf( $str_standard, '<strong>' . esc_html__( 'Standard', 'option-tree' ) . '</strong>', '<code>' . esc_html__( 'OptionTree->Documentation', 'option-tree' ) . '</code>' ) . '</div>
+						<div class="description">' . sprintf( $str_standard, '<strong>' . esc_html__( 'Standard', 'option-tree' ) . '</strong>', '<code>' . esc_html__( 'Switchboard->Documentation', 'option-tree' ) . '</code>' ) . '</div>
 						<div class="format-setting-inner">
 							' . $std_form_element . '
 						</div>

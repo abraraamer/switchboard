@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Meta Box.
+ * Switchboard Meta Box.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'OT_VERSION' ) ) {
 if ( ! class_exists( 'OT_Meta_Box' ) ) {
 
 	/**
-	 * OptionTree Meta Box class.
+	 * Switchboard Meta Box class.
 	 *
 	 * This class loads all the methods and helpers specific to build a meta box.
 	 */

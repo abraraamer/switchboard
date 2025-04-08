@@ -2,19 +2,19 @@
 /**
  * Initialize the custom Theme Options.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 add_action( 'init', 'custom_theme_options' );
 
 /**
- * Build the custom settings & update OptionTree.
+ * Build the custom settings & update Switchboard.
  *
  * @since 2.0
  */
 function custom_theme_options() {
 
-	// OptionTree is not loaded yet, or this is not an admin request.
+	// Switchboard is not loaded yet, or this is not an admin request.
 	if ( ! function_exists( 'ot_settings_id' ) || ! is_admin() ) {
 		return false;
 	}
@@ -26,7 +26,7 @@ function custom_theme_options() {
 
 	/**
 	 * Custom settings array that will eventually be
-	 * passes to the OptionTree Settings API Class.
+	 * passes to the Switchboard Settings API Class.
 	 */
 	$custom_settings = array(
 		'contextual_help' => array(
@@ -182,7 +182,7 @@ function custom_theme_options() {
 			array(
 				'id'           => 'demo_css',
 				'label'        => __( 'CSS', 'theme-text-domain' ),
-				'desc'         => '<p>' . sprintf( __( 'The CSS option type is a textarea that when used properly can add dynamic CSS to your theme from within OptionTree. Unfortunately, due server limitations you will need to create a file named %1$s at the root level of your theme and change permissions using %2$s so the server can write to the file. I have had the most success setting this single file to %3$s but feel free to play around with permissions until everything is working. A good starting point is %4$s. When the server can save to the file, CSS will automatically be updated when you save your Theme Options.', 'theme-text-domain' ), '<code>dynamic.css</code>', '<code>chmod</code>', '<code>0777</code>', '<code>0666</code>' ) . '</p><p>' . sprintf( __( 'This example assumes you have an option with the ID of %1$s. Which means this option will automatically insert the value of %1$s into the %2$s when the Theme Options are saved.', 'theme-text-domain' ), '<code>demo_background</code>', '<code>dynamic.css</code>' ) . '</p>',
+				'desc'         => '<p>' . sprintf( __( 'The CSS option type is a textarea that when used properly can add dynamic CSS to your theme from within Switchboard. Unfortunately, due server limitations you will need to create a file named %1$s at the root level of your theme and change permissions using %2$s so the server can write to the file. I have had the most success setting this single file to %3$s but feel free to play around with permissions until everything is working. A good starting point is %4$s. When the server can save to the file, CSS will automatically be updated when you save your Theme Options.', 'theme-text-domain' ), '<code>dynamic.css</code>', '<code>chmod</code>', '<code>0777</code>', '<code>0666</code>' ) . '</p><p>' . sprintf( __( 'This example assumes you have an option with the ID of %1$s. Which means this option will automatically insert the value of %1$s into the %2$s when the Theme Options are saved.', 'theme-text-domain' ), '<code>demo_background</code>', '<code>dynamic.css</code>' ) . '</p>',
 				'std'          => '#custom {
   {{demo_background}}
 }',
@@ -770,7 +770,7 @@ function custom_theme_options() {
 			array(
 				'id'           => 'demo_upload',
 				'label'        => __( 'Upload', 'theme-text-domain' ),
-				'desc'         => sprintf( __( 'The Upload option type is used to upload any WordPress supported media. After uploading, users are required to press the "%1$s" button in order to populate the input with the URI of that media. There is one caveat of this feature. If you import the theme options and have uploaded media on one site the old URI will not reflect the URI of your new site. You will have to re-upload or %2$s any media to your new server and change the URIs if necessary.', 'theme-text-domain' ), apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'theme-text-domain' ) ), 'FTP' ),
+				'desc'         => sprintf( __( 'The Upload option type is used to upload any WordPress supported media. After uploading, users are required to press the "%1$s" button in order to populate the input with the URI of that media. There is one caveat of this feature. If you import the theme options and have uploaded media on one site the old URI will not reflect the URI of your new site. You will have to re-upload or %2$s any media to your new server and change the URIs if necessary.', 'theme-text-domain' ), apply_filters( 'ot_upload_text', __( 'Send to Switchboard', 'theme-text-domain' ) ), 'FTP' ),
 				'std'          => '',
 				'type'         => 'upload',
 				'section'      => 'option_types',
@@ -808,7 +808,7 @@ function custom_theme_options() {
 		update_option( ot_settings_id(), $custom_settings );
 	}
 
-	// Lets OptionTree know the UI Builder is being overridden.
+	// Lets Switchboard know the UI Builder is being overridden.
 	global $ot_has_custom_theme_options;
 	$ot_has_custom_theme_options = true;
 }

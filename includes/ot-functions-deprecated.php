@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Deprecated Functions.
+ * Switchboard Deprecated Functions.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {

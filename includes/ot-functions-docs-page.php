@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Documentation Page Functions.
+ * Switchboard Documentation Page Functions.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -61,7 +61,7 @@ if ( ! function_exists( 'ot_type_creating_options' ) ) {
 		echo '<h4>' . esc_html__( 'Post Type', 'option-tree' ) . ':</h4>';
 
 		/* translators: %1$s: example value, %2$s: post_type, %3$s: using any as a value */
-		$string = esc_html__( 'Add a comma separated list of post type like %1$s. This will only affect the following option types: Custom Post Type Checkbox, & Custom Post Type Select. Below are the default post types available with WordPress and that are also compatible with OptionTree. You can also add your own custom %2$s. At this time %3$s does not seem to return results properly and is something I plan on looking into.', 'option-tree' );
+		$string = esc_html__( 'Add a comma separated list of post type like %1$s. This will only affect the following option types: Custom Post Type Checkbox, & Custom Post Type Select. Below are the default post types available with WordPress and that are also compatible with Switchboard. You can also add your own custom %2$s. At this time %3$s does not seem to return results properly and is something I plan on looking into.', 'option-tree' );
 		echo '<p>' . sprintf( $string, '<code>post,page</code>', '<code>post_type</code>', '<code>any</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '<ul class="docs-ul">';
@@ -160,7 +160,7 @@ if ( ! function_exists( 'ot_type_option_types' ) ) {
 		echo '<h4>' . esc_html__( 'CSS', 'option-tree' ) . ':</h4>';
 
 		/* translators: %1$s: file name, %2$s: command name, %3$s: permission mode, %4$s: permission mode */
-		$string = esc_html__( 'The CSS option type is a textarea that when used properly can add dynamic CSS to your theme from within OptionTree. Unfortunately, due server limitations you will need to create a file named %1$s at the root level of your theme and change permissions using %2$s so the server can write to the file. I have had the most success setting this single file to %3$s but feel free to play around with permissions until everything is working. A good starting point is %4$s. When the server can save to the file, CSS will automatically be updated when you save your Theme Options.', 'option-tree' );
+		$string = esc_html__( 'The CSS option type is a textarea that when used properly can add dynamic CSS to your theme from within Switchboard. Unfortunately, due server limitations you will need to create a file named %1$s at the root level of your theme and change permissions using %2$s so the server can write to the file. I have had the most success setting this single file to %3$s but feel free to play around with permissions until everything is working. A good starting point is %4$s. When the server can save to the file, CSS will automatically be updated when you save your Theme Options.', 'option-tree' );
 		echo '<p>' . sprintf( $string, '<code>dynamic.css</code>', '<code>chmod</code>', '<code>0777</code>', '<code>0666</code>' ) . '</p>'; // phpcs:ignore
 
 		/* translators: option ID: pixel unit, %2$s: file name */
@@ -495,7 +495,7 @@ add_filter( \'ot_recognized_font_families\', \'filter_ot_recognized_font_familie
 
 		/* translators: %1$s: button text, %2$s: the FTP protocol */
 		$string = esc_html__( 'The Upload option type is used to upload any WordPress supported media. After uploading, users are required to press the "%1$s" button in order to populate the input with the URI of that media. There is one caveat of this feature. If you import the theme options and have uploaded media on one site the old URI will not reflect the URI of your new site. You will have to re-upload or %2$s any media to your new server and change the URIs if necessary.', 'option-tree' );
-		echo '<p>' . sprintf( $string, esc_html( apply_filters( 'ot_upload_text', __( 'Send to OptionTree', 'option-tree' ) ) ), 'FTP' ) . '</p>'; // phpcs:ignore
+		echo '<p>' . sprintf( $string, esc_html( apply_filters( 'ot_upload_text', __( 'Send to Switchboard', 'option-tree' ) ) ), 'FTP' ) . '</p>'; // phpcs:ignore
 
 		echo '</div>';
 
@@ -620,7 +620,7 @@ if ( ! function_exists( 'ot_type_examples' ) ) {
 		echo '<div class="description">';
 
 		/* translators: %1$s: function name, %2$s: emphasis on not, %3$s: function name, %4$s: function name */
-		$string = esc_html__( 'If you\'re using the plugin version of OptionTree it is highly recommended to include a %1$s check in your code, as described in the examples below. If you\'ve integrated OptionTree directly into your themes root directory, you will %2$s need to wrap your code with %3$s, as you\'re guaranteed to have the %4$s function available.', 'option-tree' );
+		$string = esc_html__( 'If you\'re using the plugin version of Switchboard it is highly recommended to include a %1$s check in your code, as described in the examples below. If you\'ve integrated Switchboard directly into your themes root directory, you will %2$s need to wrap your code with %3$s, as you\'re guaranteed to have the %4$s function available.', 'option-tree' );
 		echo '<p class="aside">' . sprintf( $string, '<code>function_exists</code>', '<strong>' . esc_html__( 'not', 'option-tree' ) . '</strong>', '<code>function_exists</code>', '<code>ot_get_option()</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '<h4>' . esc_html__( 'String Examples', 'option-tree' ) . ':</h4>';
@@ -748,7 +748,7 @@ if ( ! function_exists( 'ot_type_layouts_overview' ) ) {
 
 		/* translators: %s: visual path to the page */
 		$string = esc_html__( 'Go to the %s tab.', 'option-tree' );
-		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
 		echo '<li>' . esc_html__( 'Enter a name for your layout in the text field and hit "Save Layouts", you\'ve created your first layout.', 'option-tree' ) . '</li>';
 		echo '<li>' . esc_html__( 'Adding a new layout is as easy as repeating the steps above.', 'option-tree' ) . '</li>';
 		echo '</ul>';
@@ -758,7 +758,7 @@ if ( ! function_exists( 'ot_type_layouts_overview' ) ) {
 
 		/* translators: %s: visual path to the page */
 		$string = esc_html__( 'Go to the %s tab.', 'option-tree' );
-		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
 		echo '<li>' . esc_html__( 'Click on the activate layout button in the actions list.', 'option-tree' ) . '</li>';
 		echo '</ul>';
 
@@ -767,7 +767,7 @@ if ( ! function_exists( 'ot_type_layouts_overview' ) ) {
 
 		/* translators: %s: visual path to the page */
 		$string = esc_html__( 'Go to the %s tab.', 'option-tree' );
-		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'OptionTree->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Settings->Layouts', 'option-tree' ) . '</code>' ) . '</li>'; // phpcs:ignore
 		echo '<li>' . esc_html__( 'Click on the delete layout button in the actions list.', 'option-tree' ) . '</li>';
 		echo '</ul>';
 
@@ -843,7 +843,7 @@ if ( ! function_exists( 'ot_type_meta_boxes' ) ) {
 		echo '<h4>' . esc_html__( 'How-to-guide', 'option-tree' ) . '</h4>';
 
 		/* translators: %1$s: directory name, %2$s: directory name, %3$s: file type */
-		$string = esc_html__( 'There are a few simple steps you need to take in order to use OptionTree\'s built in Meta Box API. In the code below I\'ll show you a basic demo of how to create your very own custom meta box using any number of the option types you have at your disposal. If you would like to see some demo code, there is a directory named %1$s inside the %2$s directory that contains a file named %3$s you can reference.', 'option-tree' );
+		$string = esc_html__( 'There are a few simple steps you need to take in order to use Switchboard\'s built in Meta Box API. In the code below I\'ll show you a basic demo of how to create your very own custom meta box using any number of the option types you have at your disposal. If you would like to see some demo code, there is a directory named %1$s inside the %2$s directory that contains a file named %3$s you can reference.', 'option-tree' );
 		echo '<p>' . sprintf( $string, '<code>theme-mode</code>', '<code>assets</code>', '<code>demo-meta-boxes.php</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '<p>' . esc_html__( 'It\'s important to note that Meta Boxes do not support WYSIWYG editors at this time and if you set one of your options to Textarea it will automatically revert to a Textarea Simple until a valid solution is found. WordPress released this statement regarding the wp_editor() function:', 'option-tree' ) . '</p>';
@@ -877,7 +877,7 @@ require( trailingslashit( get_template_directory() ) . \'includes/meta-boxes.php
 		echo '<ul class="docs-ul">';
 
 		/* translators: %1$s: file name, %2$s: hook type, %3$s: function name */
-		$string = esc_html__( 'Add a variation of the following code to your %1$s. You\'ll obviously need to fill it in with all your custom array values. It\'s important to note here that we use the %2$s filter because if you were to call the %3$s function before OptionTree was loaded the sky would fall on your head.', 'option-tree' );
+		$string = esc_html__( 'Add a variation of the following code to your %1$s. You\'ll obviously need to fill it in with all your custom array values. It\'s important to note here that we use the %2$s filter because if you were to call the %3$s function before Switchboard was loaded the sky would fall on your head.', 'option-tree' );
 		echo '<li>' . sprintf( $string, '<code>meta-boxes.php</code>', '<code>admin_init</code>', '<code>ot_register_meta_box</code>' ) . '</li>'; // phpcs:ignore
 
 		echo '</ul>';
@@ -938,7 +938,7 @@ if ( ! function_exists( 'ot_type_theme_mode' ) ) {
 		echo '<h4>' . esc_html__( 'How-to-guide', 'option-tree' ) . '</h4>';
 
 		/* translators: %1$s: directory name, %2$s: directory name, %3$s: file type */
-		$string = esc_html__( 'There are a few simple steps you need to take in order to use OptionTree as a theme included module. In the code below I\'ll show you a basic demo of how to include the entire plugin as a module, which will allow you to have the most up-to-date version of OptionTree without ever needing to hack the core of the plugin. If you would like to see some demo code, there is a directory named %1$s inside the %2$s directory that contains a file named %3$s you can reference.', 'option-tree' );
+		$string = esc_html__( 'There are a few simple steps you need to take in order to use Switchboard as a theme included module. In the code below I\'ll show you a basic demo of how to include the entire plugin as a module, which will allow you to have the most up-to-date version of Switchboard without ever needing to hack the core of the plugin. If you would like to see some demo code, there is a directory named %1$s inside the %2$s directory that contains a file named %3$s you can reference.', 'option-tree' );
 		echo '<p>' . sprintf( $string, '<code>theme-mode</code>', '<code>assets</code>', '<code>demo-theme-options.php</code>' ) . '</p>'; // phpcs:ignore
 
 		echo '<h5>' . esc_html__( 'Step 1: Include the plugin & turn on theme mode.', 'option-tree' ) . '</h5>';
@@ -947,7 +947,7 @@ if ( ! function_exists( 'ot_type_theme_mode' ) ) {
 
 		/* translators: %1$s: directory name, %2$s: file type */
 		$string = esc_html__( 'Download the latest version of %1$s and unarchive the %2$s directory.', 'option-tree' );
-		echo '<li>' . sprintf( $string, '<a href="https://wordpress.org/plugins/option-tree/" rel="nofollow" target="_blank">' . esc_html__( 'OptionTree', 'option-tree' ) . '</a>', '<code>.zip</code>' ) . '</li>'; // phpcs:ignore
+		echo '<li>' . sprintf( $string, '<a href="https://wordpress.org/plugins/option-tree/" rel="nofollow" target="_blank">' . esc_html__( 'Switchboard', 'option-tree' ) . '</a>', '<code>.zip</code>' ) . '</li>'; // phpcs:ignore
 
 		/* translators: %1$s: directory name, %2$s: directory path */
 		$string = esc_html__( 'Put the %1$s directory in the root of your theme. For example, the server path would be %2$s.', 'option-tree' );
@@ -965,16 +965,16 @@ if ( ! function_exists( 'ot_type_theme_mode' ) ) {
 add_filter( \'ot_theme_mode\', \'__return_true\' );
 
 /**
- * Required: include OptionTree.
+ * Required: include Switchboard.
  */
 require( trailingslashit( get_template_directory() ) . \'option-tree/ot-loader.php\' );
 </code></pre>';
 
 		/* translators: %1$s: file name, %2$s: directory path */
-		$string = esc_html__( 'For a list of all the OptionTree UI display filters refer to the %1$s file found in the %2$s directory of this plugin. This file is the starting point for developing themes with Theme Mode.', 'option-tree' );
+		$string = esc_html__( 'For a list of all the Switchboard UI display filters refer to the %1$s file found in the %2$s directory of this plugin. This file is the starting point for developing themes with Theme Mode.', 'option-tree' );
 		echo '<p>' . sprintf( $string, '<code>demo-functions.php</code>', '<code>/assets/theme-mode/</code>' ) . '</p>'; // phpcs:ignore
 
-		echo '<p class="aside">' . esc_html__( 'You now have OptionTree built into your theme and anytime an update is available replace the old version with the new one.', 'option-tree' ) . '</p>';
+		echo '<p class="aside">' . esc_html__( 'You now have Switchboard built into your theme and anytime an update is available replace the old version with the new one.', 'option-tree' ) . '</p>';
 
 		echo '<h5>' . esc_html__( 'Step 2: Create Theme Options without using the UI Builder.', 'option-tree' ) . '</h5>';
 		echo '<ul class="docs-ul">';
@@ -1007,7 +1007,7 @@ require( trailingslashit( get_template_directory() ) . \'includes/theme-options.
 
 		echo '</ul>';
 
-		echo '<p>' . esc_html__( 'The code below is a boilerplate to get your started. For a full list of the available option types click the "Option Types" tab above. Also a quick note, you don\'t need to put OptionTree in theme mode to manually create options but you will want to hide the docs and settings as each time you load the admin area the settings be written over with the code below if they\'ve changed in any way. However, this ensures your settings do not get tampered with by the end-user.', 'option-tree' ) . '</p>';
+		echo '<p>' . esc_html__( 'The code below is a boilerplate to get your started. For a full list of the available option types click the "Option Types" tab above. Also a quick note, you don\'t need to put Switchboard in theme mode to manually create options but you will want to hide the docs and settings as each time you load the admin area the settings be written over with the code below if they\'ve changed in any way. However, this ensures your settings do not get tampered with by the end-user.', 'option-tree' ) . '</p>';
 
 		echo "<pre><code>/**
  * Initialize the options before anything else. 
@@ -1015,11 +1015,11 @@ require( trailingslashit( get_template_directory() ) . \'includes/theme-options.
 add_action( 'init', 'custom_theme_options', 1 );
 
 /**
- * Build the custom settings & update OptionTree.
+ * Build the custom settings & update Switchboard.
  */
 function custom_theme_options() {
 
-  /* OptionTree is not loaded yet, or this is not an admin request */
+  /* Switchboard is not loaded yet, or this is not an admin request */
   if ( ! function_exists( 'ot_settings_id' ) || ! is_admin() )
     return false;
 
@@ -1030,7 +1030,7 @@ function custom_theme_options() {
   
   /**
    * Custom settings array that will eventually be 
-   * passes to the OptionTree Settings API Class.
+   * passes to the Switchboard Settings API Class.
    */
   &#36;custom_settings = array(
     'contextual_help' => array(
@@ -1153,7 +1153,7 @@ function custom_theme_options() {
     update_option( 'option_tree_settings', &#36;custom_settings ); 
   }
   
-  /* Lets OptionTree know the UI Builder is being overridden */
+  /* Lets Switchboard know the UI Builder is being overridden */
   global &#36;ot_has_custom_theme_options;
   &#36;ot_has_custom_theme_options = true;
   

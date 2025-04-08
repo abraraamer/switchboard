@@ -1,10 +1,10 @@
 <?php
 /**
- * OptionTree Option Type Functions.
+ * Switchboard Option Type Functions.
  *
  * Functions used to build each option type.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {

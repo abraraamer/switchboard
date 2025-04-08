@@ -1,5 +1,5 @@
 /* -------------------------------------------------- 
-  :: OptionTree Font
+  :: Switchboard Font
   ---------------------------------------------------*/
 @font-face {
   font-family: "option-tree-font";
@@ -1158,7 +1158,7 @@
 }
  
 /* -------------------------------------------------- 
-  :: OptionTree Wrappers
+  :: Switchboard Wrappers
   ---------------------------------------------------*/
 #option-tree-settings-api .metabox-holder {
   overflow: hidden;
@@ -2666,7 +2666,7 @@ select.option-tree-ui-select option {
 }
 
 /* -------------------------------------------------- 
-  :: OptionTree UI Buttons 
+  :: Switchboard UI Buttons 
   ---------------------------------------------------*/
 .option-tree-ui-button.button {
   float: left;
@@ -2799,7 +2799,7 @@ button.reset-settings {
 }
 
 /* -------------------------------------------------- 
-  :: OptionTree UI Button Icons 
+  :: Switchboard UI Button Icons 
   ---------------------------------------------------*/
 .option-tree-ui-button .icon {
   color: #3a3a3a;

@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Function.
+ * Switchboard Function.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -207,7 +207,7 @@ if ( ! function_exists( 'ot_load_dynamic_css' ) ) {
 		/**
 		 * Filter whether or not to enqueue a `dynamic.css` file at the theme level.
 		 *
-		 * By filtering this to `false` OptionTree will not attempt to enqueue any CSS files.
+		 * By filtering this to `false` Switchboard will not attempt to enqueue any CSS files.
 		 *
 		 * Example: add_filter( 'ot_load_dynamic_css', '__return_false' );
 		 *

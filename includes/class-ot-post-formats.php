@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Post Formats.
+ * Switchboard Post Formats.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {
@@ -12,7 +12,7 @@ if ( ! defined( 'OT_VERSION' ) ) {
 if ( ! class_exists( 'OT_Post_Formats' ) ) {
 
 	/**
-	 * OptionTree Post Formats class.
+	 * Switchboard Post Formats class.
 	 *
 	 * This class loads all the methods and helpers specific to build a the post format metaboxes.
 	 */

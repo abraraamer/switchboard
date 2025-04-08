@@ -2,7 +2,7 @@
 /**
  * Initialize the custom Meta Boxes.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 add_action( 'admin_init', 'custom_meta_boxes' );
@@ -18,7 +18,7 @@ function custom_meta_boxes() {
 
 	/**
 	 * Create a custom meta boxes array that we pass to
-	 * the OptionTree Meta Box API Class.
+	 * the Switchboard Meta Box API Class.
 	 */
 	$my_meta_box = array(
 		'id'       => 'demo_meta_box',

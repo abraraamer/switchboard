@@ -1,8 +1,8 @@
 <?php
 /**
- * OptionTree Compatibility Functions.
+ * Switchboard Compatibility Functions.
  *
- * @package OptionTree
+ * @package Switchboard
  */
 
 if ( ! defined( 'OT_VERSION' ) ) {

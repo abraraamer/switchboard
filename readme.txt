@@ -1,4 +1,4 @@
-=== OptionTree ===
+=== Switchboard ===
 Contributors: valendesigns
 Tags: options, theme options, meta boxes, settings
 Requires at least: 3.8
@@ -13,25 +13,25 @@ Theme Options UI Builder for WordPress. A simple way to create & save Theme Opti
 
 == Description ==
 
-OptionTree attempts to bridge the gap between WordPress developers, designers and end-users by creating fully responsive option panels and meta boxes with an ease unlike any other plugin. OptionTree has many advanced features with well placed hooks and filters to adjust every aspect of the user experience. 
+Switchboard attempts to bridge the gap between WordPress developers, designers and end-users by creating fully responsive option panels and meta boxes with an ease unlike any other plugin. Switchboard has many advanced features with well placed hooks and filters to adjust every aspect of the user experience. 
 
 Build your Theme Options panel locally with an easy to use drag & drop interface and then export a functioning `theme-options.php` file for production use that is i18n translation ready, with your custom text domain automatically inserted. 
 
-And, in just a few simple lines of code, save settings to the database with a unique array ID so none of your Theme Options conflict with other themes that use OptionTree. 
+And, in just a few simple lines of code, save settings to the database with a unique array ID so none of your Theme Options conflict with other themes that use Switchboard. 
 
-Also, OptionTree now takes full advantage of the new color schemes introduced in WordPress 3.8, it looks and feels built-in.
+Also, Switchboard now takes full advantage of the new color schemes introduced in WordPress 3.8, it looks and feels built-in.
 
 #### Theme Integration
-If you're like me, you want to know how everything works. Download and activate the [OptionTree Theme](https://github.com/valendesigns/option-tree-theme) and see first hand how to integrate OptionTree into your own project. I'll walk you through installing OptionTree and you'll get a chance to see all the various options and filters first hand and in the wild.
+If you're like me, you want to know how everything works. Download and activate the [Switchboard Theme](https://github.com/valendesigns/option-tree-theme) and see first hand how to integrate Switchboard into your own project. I'll walk you through installing Switchboard and you'll get a chance to see all the various options and filters first hand and in the wild.
 
 #### Contributing
-To contribute or report bugs, please go to the [OptionTree Github](https://github.com/valendesigns/option-tree) repository.
+To contribute or report bugs, please go to the [Switchboard Github](https://github.com/valendesigns/option-tree) repository.
 
 #### Sponsorship
-OptionTree is a project partly sponsored by <a href="http://themeforest.net/?ref=valendesigns">ThemeForest</a>, the largest WordPress theme marketplace on the web.
+Switchboard is a project partly sponsored by <a href="http://themeforest.net/?ref=valendesigns">ThemeForest</a>, the largest WordPress theme marketplace on the web.
 
 #### Option Types
-This is a complete list of all the available option types that come shipped with OptionTree.
+This is a complete list of all the available option types that come shipped with Switchboard.
 
 * Background
 * Border
@@ -85,13 +85,13 @@ This is a complete list of all the available option types that come shipped with
 
 1. Upload `option-tree` to the `/wp-content/plugins/` directory
 1. Activate the plugin through the `Plugins` menu in WordPress
-1. Click the `OptionTree->Documentation` link in the WordPress admin sidebar menu for further setup assistance.
+1. Click the `Switchboard->Documentation` link in the WordPress admin sidebar menu for further setup assistance.
 
 **Theme Mode**
 
-1. Download the latest version of OptionTree and unarchive the `.zip` directory.
+1. Download the latest version of Switchboard and unarchive the `.zip` directory.
 1. Put the `option-tree` directory in the root of your theme. For example, the server path would be `/wp-content/themes/theme-name/option-tree/`.
-1. You must deactivate and/or delete the plugin version of OptionTree.
+1. You must deactivate and/or delete the plugin version of Switchboard.
 1. Add the following code to the beginning of your `functions.php`.
 
 ```
@@ -101,22 +101,22 @@ This is a complete list of all the available option types that come shipped with
 add_filter( 'ot_theme_mode', '__return_true' );
 
 /**
- * Required: include OptionTree.
+ * Required: include Switchboard.
  */
 require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
 ```
 
-For a list of all the OptionTree UI display filters refer to the `demo-functions.php` file found in the `/assets/theme-mode/` directory of this plugin. This file is the starting point for developing themes with Theme Mode.
+For a list of all the Switchboard UI display filters refer to the `demo-functions.php` file found in the `/assets/theme-mode/` directory of this plugin. This file is the starting point for developing themes with Theme Mode.
 
 == Frequently Asked Questions ==
 
 = Is there a demo theme I can install? =
 
-There sure is, and I'm glad you asked. Download and activate the [OptionTree Theme](https://github.com/valendesigns/option-tree-theme) and get some experience setting up OptionTree on your own with detailed directions and tips.
+There sure is, and I'm glad you asked. Download and activate the [Switchboard Theme](https://github.com/valendesigns/option-tree-theme) and get some experience setting up Switchboard on your own with detailed directions and tips.
 
 = I get errors or a blank screen when I activate the plugin. What's the deal? =
 
-The most likely scenario is your theme already has OptionTree installed in Theme Mode. And since the plugin and theme version can't both be active at the same time without the sky falling on your head, your site has decided to throw in the towel. If that's not your issue, open up a support request and we'll figure it out together. UPDATE: As of OptionTree 2.4.0 the plugin version will not conflict with the Theme Mode version if they are both 2.4.0 or higher.
+The most likely scenario is your theme already has Switchboard installed in Theme Mode. And since the plugin and theme version can't both be active at the same time without the sky falling on your head, your site has decided to throw in the towel. If that's not your issue, open up a support request and we'll figure it out together. UPDATE: As of Switchboard 2.4.0 the plugin version will not conflict with the Theme Mode version if they are both 2.4.0 or higher.
 
 == Screenshots ==
 
@@ -144,7 +144,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Force all settings to be sanitized and escaped before saving and during display.
 * Add filter `ot_validate_setting_input_safe` which is used to validate the input value of a custom setting type. All values must be validated!
 * Add a notice to let users know that a custom setting type is not properly validating saved data and do a best-effort sanitize of the user data before saving it.
-* Fix issue with Composer autoload and only load OptionTree if we have access to WordPress. props @infomaniac50
+* Fix issue with Composer autoload and only load Switchboard if we have access to WordPress. props @infomaniac50
 * Fix deprecated `create_function` notice in PHP 7.2+. props @modesthatred
 * Fix notice "Only variables should be passed by reference". props @SergeAx
 * Add `wordpress-plugin` project type to composer file. props @egifford
@@ -165,14 +165,14 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 
 = 2.5.5 =
 * Hotfix - Allow a `0` value to be saved with certain option types. Contributors via github @BassemN.
-* Hotfix - Stop media from being attached to the OptionTree post type when uploaded from the media manager or customizer. Contributors via github @earnjam, and @valendesigns.
+* Hotfix - Stop media from being attached to the Switchboard post type when uploaded from the media manager or customizer. Contributors via github @earnjam, and @valendesigns.
 * Hotfix - Added filter `ot_load_dynamic_css` to explicitly turn the feature off if desired.
 * Hotfix - Stopped `dynamic.css` created with other themes from being loaded elsewhere.
 
 = 2.5.4 =
 * Hotfix - Support for WordPress 4.2 term splitting.
 * Hotfix - Removed any potential XSS security issues with `add_query_arg` by escaping it.
-* Hotfix - Fixed an issue where Visual Composer was indirectly destroying OptionTree meta box values.
+* Hotfix - Fixed an issue where Visual Composer was indirectly destroying Switchboard meta box values.
 * Hotfix - Fixed an issue where the select field value was not visible. Contributors via github @sabbirk15.
 
 = 2.5.3 =
@@ -251,7 +251,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 
 = 2.4.3 =
 * Hotfix - WordPress 4.0 compatible.
-* Hotfix - Fixed an issue where all media was being attached to the default OptionTree media post.
+* Hotfix - Fixed an issue where all media was being attached to the default Switchboard media post.
 * Hotfix - Removed the deprecated `screen_icon()` function.
 * Hotfix - Fixed the `ot_line_height_range_interval` filter being misnamed as `ot_line_height_unit_type`. Contributors via github @youri--.
 * Hotfix - Fixed a conflict with "Frontend Publishing Pro" when using the media uploader on the front-end.
@@ -278,7 +278,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 = 2.4.0 =
 * Added filter 'ot_post_formats' which loads meta boxes specifically for post formats.
 * Added the Social Links option type.
-* Fixed OptionTree being conflicted due to having both the plugin and theme version activated. Contributors via github @valendesigns and @bitcommit.
+* Fixed Switchboard being conflicted due to having both the plugin and theme version activated. Contributors via github @valendesigns and @bitcommit.
 * Added an admin notice when the UI Builder is being overridden by custom theme options.
 * Allow the Upload option type to be stored as an attachment ID by adding `ot-upload-attachment-id` to the elements `class` attribute. Contributors via github @valendesigns and @krisarsov.
 * Fixed an issue with the CSS option type not showing the Ace editor in a metabox that is broken into tabbed content.
@@ -332,10 +332,10 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added filter 'ot_options_id' to change the 'option_tree' option ID to a unique value.
 * Added filter 'ot_settings_id' to change the 'option_tree_settings' option ID to a unique value.
 * Added filter 'ot_layouts_id' to change the 'option_tree_layouts' option ID to a unique value.
-* Added filter 'ot_header_logo_link' to change the logo link inside the header of OptionTree.
-* Added filter 'ot_header_version_text' to change the version text inside the header of OptionTree.
-* Added action 'ot_header_list' to add additional theme specific list items to the header of OptionTree.
-* Added filter 'ot_upload_text' to change the "Send to OptionTree" text.
+* Added filter 'ot_header_logo_link' to change the logo link inside the header of Switchboard.
+* Added filter 'ot_header_version_text' to change the version text inside the header of Switchboard.
+* Added action 'ot_header_list' to add additional theme specific list items to the header of Switchboard.
+* Added filter 'ot_upload_text' to change the "Send to Switchboard" text.
 * Added the CSS Class field value to the parent `.format-settings` div in addition to the class being added to the element. Each class is now appended with `-wrap`.
 * Added support for [Composer](https://github.com/composer/composer). Contributors via github @designst.
 * Added support for adding I18n text domains to the exported `theme-options.php` file.
@@ -343,7 +343,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Fixed a bug that caused the Gallery option type to save a single space instead of `null`.
 * Fixed the return value of the Background, Measurement, and Typography option types. They now return `null` if no values are saved to the array.
 * Fixed a bug that resulted in a PHP warning if the choices array was set to an empty string.
-* Updated the documentation, including this `readme.txt` and a new demo [OptionTree Theme](https://github.com/valendesigns/option-tree-theme) to parallel OptionTree.
+* Updated the documentation, including this `readme.txt` and a new demo [Switchboard Theme](https://github.com/valendesigns/option-tree-theme) to parallel Switchboard.
 * Added filter 'ot_type_radio_image_src' which allows the Radio Image option type source URI to be changed. Contributors via github @bitcommit.
 
 = 2.2.3 =
@@ -367,7 +367,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Replaced the old Color Picker with the default WP Color Picker.
 * Added UI support for WordPress 3.8. Contributors via github @AlxMedia, and @valendesigns.
 * Added support for conditional toggling of settings fields. Contributors via github @maimairel, @valendesigns, @doitmax, and @imangm.
-* Replaced the OptionTree image icon with a font version.
+* Replaced the Switchboard image icon with a font version.
 * Added 'background-size' to the Background option type.
 * Added fallback text when displaying posts without titles in various option types.
 * Added filter 'ot_recognized_background_fields' to show/hide fields for background option types.
@@ -395,12 +395,12 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Hotfix - Removed template queries in option types. Contributors via github @live-mesh.
 
 = 2.1.3 =
-* Hotfix - Loading OptionTree on the 'init' action proved to be wrong, it now loads on 'after_setup_theme'.
+* Hotfix - Loading Switchboard on the 'init' action proved to be wrong, it now loads on 'after_setup_theme'.
 * Hotfix - Layouts were not being imported properly due to using the wrong path variable.
 
 = 2.1.2 =
 * Hotfix - Fixed a JS mistake that caused upload in list items and sliders to not open the media uploader until saved first.
-* Hotfix - Load OptionTree on the 'init' action, which allows the UI filters to properly function when not in theme mode.
+* Hotfix - Load Switchboard on the 'init' action, which allows the UI filters to properly function when not in theme mode.
 
 = 2.1.1 =
 * Hotfix - The OT_SHOW_SETTINGS_EXPORT constant was incorrectly set to false as the default.
@@ -413,7 +413,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added a horizontal Numeric Slider option type. Contributors via github @maimairel and @valendesigns.
 * Added a Sidebar Select option type. Contributors via github @maimairel.
 * Removed additional deprecated assigning of return value in PHP.
-* Fix missing "Send to OptionTree" button in CPT. Contributors via github @jomaddim.
+* Fix missing "Send to Switchboard" button in CPT. Contributors via github @jomaddim.
 * Fix option types that use $count instead of an array key to select the option value.
 * Created functions to register the Theme Options & Settings pages, and with better filtering.
 * Added relative path support for Radio Image choices.
@@ -425,7 +425,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added filter 'ot_show_settings_import' which allows you to hide the Settings Import options on the Import page.
 * Added filter 'ot_show_settings_export' which allows you to hide the Settings Export options on the Export page.
 * Added filter 'ot_show_docs' which allows you to hide the Documentation.
-* Added filter 'ot_use_theme_options' which allows you to hide the OptionTree Theme Option page (not recommended for beginners).
+* Added filter 'ot_use_theme_options' which allows you to hide the Switchboard Theme Option page (not recommended for beginners).
 * Added filter 'ot_list_item_description' which allows you to change the default list item description text.
 * Added filter 'ot_type_custom_post_type_checkbox_query' which allows you to filter the get_posts() args for Custom Post Type Checkbox.
 * Added filter 'ot_type_custom_post_type_select_query' which allows you to filter the get_posts() args for Custom Post Type Select.
@@ -464,7 +464,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Added additional filters to the array that builds the Theme Option UI.
 * Made option-tree post type private.
 * Revert capabilities back to manage_options in ot-ui-admin.php.
-* Upload now sends the URL of the selected image size to OptionTree.
+* Upload now sends the URL of the selected image size to Switchboard.
 * Added new range interval filter to font-size, letter-spacing, & line-height.
 * Allow Typography fields to be filtered out of the UI.
 
@@ -567,7 +567,7 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 * Better looking selects with 1=Yes,2=No where '1' is the value and 'Yes' is the text in the select.
 * Made the AJAX message CSS more prominent.
 * functions.load.php will now only load option type functions if viewing an OT admin page.
-* Deregistered the custom jQuery UI in the 'Cispm Mail Contact' plugin when viewing an OptionTree page.
+* Deregistered the custom jQuery UI in the 'Cispm Mail Contact' plugin when viewing an Switchboard page.
 * Can now save layouts from the Theme Options page.
 * You can now change the slider fields by targeting a specific "Option Key"
 * Modified upload for situations where you manually enter a relative path
@@ -633,10 +633,10 @@ The most likely scenario is your theme already has OptionTree installed in Theme
 == Upgrade Notice ==
 
 = 2.7.0 =
-All custom setting types must use the `ot_validate_setting_input_safe` filter to sanitize user input data. OptionTree will attempt to sanitize the data, but data loss could happen with custom setting types when saving — so please update them. Additionally, please install OptionTree on a test server, or backup your database, before upgrading your live site. This version contains breaking changes!
+All custom setting types must use the `ot_validate_setting_input_safe` filter to sanitize user input data. Switchboard will attempt to sanitize the data, but data loss could happen with custom setting types when saving — so please update them. Additionally, please install Switchboard on a test server, or backup your database, before upgrading your live site. This version contains breaking changes!
 
 = 2.3.0 =
-As with each major release, please install OptionTree on a test server before upgrading your live site.
+As with each major release, please install Switchboard on a test server before upgrading your live site.
 
 = 2.1.4 =
 If you're not the developer of this theme, please ask them to test compatibility with version 2.1 before upgrading. If you are the developer, I urge you to do the same in a controlled environment.
