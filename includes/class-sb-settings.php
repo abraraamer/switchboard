@@ -5,18 +5,18 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-if ( ! class_exists( 'OT_Settings' ) ) {
+if ( ! class_exists( 'SB_Settings' ) ) {
 
 	/**
 	 * Switchboard Settings class.
 	 *
 	 * This class loads all the methods and helpers specific to a Settings page.
 	 */
-	class OT_Settings {
+	class SB_Settings {
 
 		/**
 		 * An array of options.
@@ -267,7 +267,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
 						$link = '<a href="https://wordpress.org/plugins/option-tree/" target="_blank">' . esc_html__( 'Switchboard', 'option-tree' ) . '</a>';
 						echo '<li id="option-tree-logo">' . wp_kses_post( apply_filters( 'ot_header_logo_link', $link, $page['id'] ) ) . '</li>';
 
-						echo '<li id="option-tree-version"><span>' . esc_html( apply_filters( 'ot_header_version_text', 'Switchboard ' . OT_VERSION, $page['id'] ) ) . '</span></li>';
+						echo '<li id="option-tree-version"><span>' . esc_html( apply_filters( 'ot_header_version_text', 'Switchboard ' . SB_VERSION, $page['id'] ) ) . '</span></li>';
 
 						// Add additional theme specific links here.
 						do_action( 'ot_header_list', $page['id'] );
@@ -275,7 +275,7 @@ if ( ! class_exists( 'OT_Settings' ) ) {
 						echo '</ul>';
 
 						// Layouts form.
-						if ( 'ot_theme_options' === $page['id'] && true === OT_SHOW_NEW_LAYOUT ) {
+						if ( 'ot_theme_options' === $page['id'] && true === SB_SHOW_NEW_LAYOUT ) {
 							ot_theme_options_layouts_form();
 						}
 
@@ -995,7 +995,7 @@ if ( ! function_exists( 'ot_register_settings' ) ) {
 	/**
 	 * This method instantiates the settings class & builds the UI.
 	 *
-	 * @uses OT_Settings()
+	 * @uses SB_Settings()
 	 *
 	 * @param array $args Array of arguments to create settings.
 	 *
@@ -1007,6 +1007,6 @@ if ( ! function_exists( 'ot_register_settings' ) ) {
 			return;
 		}
 
-		new OT_Settings( $args );
+		new SB_Settings( $args );
 	}
 }

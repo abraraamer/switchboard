@@ -5,18 +5,18 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-if ( ! class_exists( 'OT_Post_Formats' ) ) {
+if ( ! class_exists( 'SB_Post_Formats' ) ) {
 
 	/**
 	 * Switchboard Post Formats class.
 	 *
 	 * This class loads all the methods and helpers specific to build a the post format metaboxes.
 	 */
-	class OT_Post_Formats {
+	class SB_Post_Formats {
 
 		/**
 		 * Class Constructor
@@ -118,5 +118,5 @@ if ( ! class_exists( 'OT_Post_Formats' ) ) {
  * @since 1.0
  */
 if ( function_exists( 'ot_register_meta_box' ) ) {
-	new OT_Post_Formats();
+	new SB_Post_Formats();
 }

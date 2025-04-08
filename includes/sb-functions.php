@@ -5,7 +5,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -252,7 +252,7 @@ if ( ! function_exists( 'ot_load_dynamic_css' ) ) {
 						if ( $last_css !== $css ) {
 
 							// Enqueue filtered file.
-							wp_enqueue_style( 'ot-dynamic-' . $key, $css, false, OT_VERSION );
+							wp_enqueue_style( 'ot-dynamic-' . $key, $css, false, SB_VERSION );
 
 							$last_css = $css;
 						}

@@ -8,7 +8,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -37,7 +37,7 @@ if ( ! function_exists( 'ot_register_theme_options_page' ) ) {
 		$contextual_help = isset( $get_settings['contextual_help'] ) ? $get_settings['contextual_help'] : array();
 
 		// Build the Theme Options.
-		if ( function_exists( 'ot_register_settings' ) && OT_USE_THEME_OPTIONS ) {
+		if ( function_exists( 'ot_register_settings' ) && SB_USE_THEME_OPTIONS ) {
 
 			$caps = apply_filters( 'ot_theme_options_capability', 'edit_theme_options' );
 
@@ -95,7 +95,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 		$custom_options = ( true === $ot_has_custom_theme_options || has_action( 'admin_init', 'custom_theme_options' ) || has_action( 'init', 'custom_theme_options' ) );
 
 		// Display UI Builder admin notice.
-		if ( true === OT_SHOW_OPTIONS_UI && isset( $_REQUEST['page'] ) && 'ot-settings' === $_REQUEST['page'] && $custom_options ) { // phpcs:ignore
+		if ( true === SB_SHOW_OPTIONS_UI && isset( $_REQUEST['page'] ) && 'ot-settings' === $_REQUEST['page'] && $custom_options ) { // phpcs:ignore
 
 			/**
 			 * Error message for custom theme options.
@@ -310,7 +310,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 			if ( 'settings' === $page['id'] ) {
 
 				// Remove the Theme Options UI.
-				if ( false === OT_SHOW_OPTIONS_UI ) {
+				if ( false === SB_SHOW_OPTIONS_UI ) {
 
 					foreach ( $page['sections'] as $section_key => $section ) {
 						if ( 'create_setting' === $section['id'] ) {
@@ -326,7 +326,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 				}
 
 				// Remove parts of the Imports UI.
-				if ( false === OT_SHOW_SETTINGS_IMPORT ) {
+				if ( false === SB_SHOW_SETTINGS_IMPORT ) {
 
 					foreach ( $page['settings'] as $setting_key => $setting ) {
 						if ( 'import' === $setting['section'] && in_array( $setting['id'], array( 'import_xml_text', 'import_settings_text' ), true ) ) {
@@ -336,7 +336,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 				}
 
 				// Remove parts of the Export UI.
-				if ( false === OT_SHOW_SETTINGS_EXPORT ) {
+				if ( false === SB_SHOW_SETTINGS_EXPORT ) {
 
 					foreach ( $page['settings'] as $setting_key => $setting ) {
 						if ( 'export' === $setting['section'] && in_array( $setting['id'], array( 'export_settings_file_text', 'export_settings_text' ), true ) ) {
@@ -346,7 +346,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 				}
 
 				// Remove the Layouts UI.
-				if ( false === OT_SHOW_NEW_LAYOUT ) {
+				if ( false === SB_SHOW_NEW_LAYOUT ) {
 
 					foreach ( $page['sections'] as $section_key => $section ) {
 						if ( 'layouts' === $section['id'] ) {
@@ -363,7 +363,7 @@ if ( ! function_exists( 'ot_register_settings_page' ) ) {
 			}
 
 			// Remove the Documentation UI.
-			if ( false === OT_SHOW_DOCS && 'documentation' === $page['id'] ) {
+			if ( false === SB_SHOW_DOCS && 'documentation' === $page['id'] ) {
 				unset( $ot_register_pages_array[ $key ] );
 			}
 		}
@@ -582,7 +582,7 @@ if ( ! function_exists( 'ot_validate_setting' ) ) {
 
 					$html_filter = function ( $tags, $context ) {
 						if ( 'post' === $context ) {
-							if ( current_user_can( 'unfiltered_html' ) || true === OT_ALLOW_UNFILTERED_HTML ) {
+							if ( current_user_can( 'unfiltered_html' ) || true === SB_ALLOW_UNFILTERED_HTML ) {
 								$tags['script']   = array_fill_keys( array( 'async', 'charset', 'defer', 'src', 'type' ), true );
 								$tags['style']    = array_fill_keys( array( 'media', 'type' ), true );
 								$tags['iframe']   = array_fill_keys( array( 'align', 'allowfullscreen', 'class', 'frameborder', 'height', 'id', 'longdesc', 'marginheight', 'marginwidth', 'name', 'sandbox', 'scrolling', 'src', 'srcdoc', 'style', 'width' ), true );
@@ -838,7 +838,7 @@ if ( ! function_exists( 'ot_admin_styles' ) ) {
 		wp_enqueue_style( 'wp-color-picker' );
 
 		// Load admin styles.
-		wp_enqueue_style( 'ot-admin-css', OT_URL . 'assets/css/ot-admin.css', false, OT_VERSION );
+		wp_enqueue_style( 'ot-admin-css', SB_URL . 'assets/css/ot-admin.css', false, SB_VERSION );
 
 		// Load the RTL stylesheet.
 		$wp_styles->add_data( 'ot-admin-css', 'rtl', true );
@@ -913,15 +913,15 @@ if ( ! function_exists( 'ot_admin_scripts' ) ) {
 		wp_enqueue_script( 'ace-editor', 'https://cdnjs.cloudflare.com/ajax/libs/ace/1.1.3/ace.js', null, '1.1.3', false );
 
 		// Load jQuery UI timepicker addon.
-		wp_enqueue_script( 'jquery-ui-timepicker', OT_URL . 'assets/js/vendor/jquery/jquery-ui-timepicker.js', array( 'jquery', 'jquery-ui-slider', 'jquery-ui-datepicker' ), '1.4.3', false );
+		wp_enqueue_script( 'jquery-ui-timepicker', SB_URL . 'assets/js/vendor/jquery/jquery-ui-timepicker.js', array( 'jquery', 'jquery-ui-slider', 'jquery-ui-datepicker' ), '1.4.3', false );
 
 		// Load the post formats.
-		if ( true === OT_META_BOXES && true === OT_POST_FORMATS ) {
-			wp_enqueue_script( 'ot-postformats', OT_URL . 'assets/js/ot-postformats.js', array( 'jquery' ), '1.0.1', false );
+		if ( true === SB_META_BOXES && true === SB_POST_FORMATS ) {
+			wp_enqueue_script( 'ot-postformats', SB_URL . 'assets/js/ot-postformats.js', array( 'jquery' ), '1.0.1', false );
 		}
 
 		// Load all the required scripts.
-		wp_enqueue_script( 'ot-admin-js', OT_URL . 'assets/js/ot-admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-sortable', 'jquery-ui-slider', 'wp-color-picker', 'ace-editor', 'jquery-ui-datepicker', 'jquery-ui-timepicker' ), OT_VERSION, false );
+		wp_enqueue_script( 'ot-admin-js', SB_URL . 'assets/js/ot-admin.js', array( 'jquery', 'jquery-ui-tabs', 'jquery-ui-sortable', 'jquery-ui-slider', 'wp-color-picker', 'ace-editor', 'jquery-ui-datepicker', 'jquery-ui-timepicker' ), SB_VERSION, false );
 
 		// Create localized JS array.
 		$localized_array = array(
@@ -3109,32 +3109,32 @@ if ( ! function_exists( 'ot_radio_images' ) ) {
 				array(
 					'value' => 'left-sidebar',
 					'label' => esc_html__( 'Left Sidebar', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/left-sidebar.png',
+					'src'   => SB_URL . 'assets/images/layout/left-sidebar.png',
 				),
 				array(
 					'value' => 'right-sidebar',
 					'label' => esc_html__( 'Right Sidebar', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/right-sidebar.png',
+					'src'   => SB_URL . 'assets/images/layout/right-sidebar.png',
 				),
 				array(
 					'value' => 'full-width',
 					'label' => esc_html__( 'Full Width (no sidebar)', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/full-width.png',
+					'src'   => SB_URL . 'assets/images/layout/full-width.png',
 				),
 				array(
 					'value' => 'dual-sidebar',
 					'label' => esc_html__( 'Dual Sidebar', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/dual-sidebar.png',
+					'src'   => SB_URL . 'assets/images/layout/dual-sidebar.png',
 				),
 				array(
 					'value' => 'left-dual-sidebar',
 					'label' => esc_html__( 'Left Dual Sidebar', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/left-dual-sidebar.png',
+					'src'   => SB_URL . 'assets/images/layout/left-dual-sidebar.png',
 				),
 				array(
 					'value' => 'right-dual-sidebar',
 					'label' => esc_html__( 'Right Dual Sidebar', 'option-tree' ),
-					'src'   => OT_URL . 'assets/images/layout/right-dual-sidebar.png',
+					'src'   => SB_URL . 'assets/images/layout/right-dual-sidebar.png',
 				),
 			),
 			$field_id

@@ -5,7 +5,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 

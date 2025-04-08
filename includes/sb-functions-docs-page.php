@@ -5,7 +5,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -308,12 +308,12 @@ add_filter( \'ot_measurement_unit_types\', \'filter_measurement_unit_types\', 10
       array(
         \'value\'   => \'left-sidebar\',
         \'label\'   => __( \'Left Sidebar\', \'option-tree\' ),
-        \'src\'     => OT_URL . \'/assets/images/layout/left-sidebar.png\'
+        \'src\'     => SB_URL . \'/assets/images/layout/left-sidebar.png\'
       ),
       array(
         \'value\'   => \'right-sidebar\',
         \'label\'   => __( \'Right Sidebar\', \'option-tree\' ),
-        \'src\'     => OT_URL . \'/assets/images/layout/right-sidebar.png\'
+        \'src\'     => SB_URL . \'/assets/images/layout/right-sidebar.png\'
       )
     );
   }
@@ -967,7 +967,7 @@ add_filter( \'ot_theme_mode\', \'__return_true\' );
 /**
  * Required: include Switchboard.
  */
-require( trailingslashit( get_template_directory() ) . \'option-tree/ot-loader.php\' );
+require( trailingslashit( get_template_directory() ) . \'option-tree/switchboard.php\' );
 </code></pre>';
 
 		/* translators: %1$s: file name, %2$s: directory path */
@@ -1077,32 +1077,32 @@ function custom_theme_options() {
           array(
             'value'   => 'left-sidebar',
             'label'   => 'Left Sidebar',
-            'src'     => OT_URL . '/assets/images/layout/left-sidebar.png'
+            'src'     => SB_URL . '/assets/images/layout/left-sidebar.png'
           ),
           array(
             'value'   => 'right-sidebar',
             'label'   => 'Right Sidebar',
-            'src'     => OT_URL . '/assets/images/layout/right-sidebar.png'
+            'src'     => SB_URL . '/assets/images/layout/right-sidebar.png'
           ),
           array(
             'value'   => 'full-width',
             'label'   => 'Full Width (no sidebar)',
-            'src'     => OT_URL . '/assets/images/layout/full-width.png'
+            'src'     => SB_URL . '/assets/images/layout/full-width.png'
           ),
           array(
             'value'   => 'dual-sidebar',
             'label'   => __( 'Dual Sidebar', 'option-tree' ),
-            'src'     => OT_URL . '/assets/images/layout/dual-sidebar.png'
+            'src'     => SB_URL . '/assets/images/layout/dual-sidebar.png'
           ),
           array(
             'value'   => 'left-dual-sidebar',
             'label'   => __( 'Left Dual Sidebar', 'option-tree' ),
-            'src'     => OT_URL . '/assets/images/layout/left-dual-sidebar.png'
+            'src'     => SB_URL . '/assets/images/layout/left-dual-sidebar.png'
           ),
           array(
             'value'   => 'right-dual-sidebar',
             'label'   => __( 'Right Dual Sidebar', 'option-tree' ),
-            'src'     => OT_URL . '/assets/images/layout/right-dual-sidebar.png'
+            'src'     => SB_URL . '/assets/images/layout/right-dual-sidebar.png'
           )
         )
       ),

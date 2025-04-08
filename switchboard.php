@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name: Switchboard
- * Plugin URI:  https://github.com/valendesigns/option-tree/
+ * Plugin URI:  https://github.com/abraraamer/switchboard/
  * Description: Theme Options UI Builder for WordPress. A simple way to create & save Theme Options and Meta Boxes for free or premium themes.
  * Version:     2.7.3
  * Author:      Derek Herman
@@ -12,7 +12,7 @@
  * @package Switchboard
  */
 
-if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && true === OT_PLUGIN_MODE && defined( 'ABSPATH' ) ) {
+if ( class_exists( 'Switchboard' ) && defined( 'SB_PLUGIN_MODE' ) && true === SB_PLUGIN_MODE && defined( 'ABSPATH' ) ) {
 
 	add_filter( 'ot_theme_mode', '__return_false', 999 );
 
@@ -26,12 +26,12 @@ if ( class_exists( 'OT_Loader' ) && defined( 'OT_PLUGIN_MODE' ) && true === OT_P
 	add_action( 'admin_notices', 'ot_conflict_notice' );
 }
 
-if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
+if ( ! class_exists( 'Switchboard' ) && defined( 'ABSPATH' ) ) {
 
 	/**
 	 * Switchboard loader class.
 	 */
-	class OT_Loader {
+	class Switchboard {
 
 		/**
 		 * Class constructor.
@@ -74,7 +74,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 		 * Constants.
 		 *
 		 * Defines the constants for use within Switchboard. Constants
-		 * are prefixed with 'OT_' to avoid any naming collisions.
+		 * are prefixed with 'SB_' to avoid any naming collisions.
 		 *
 		 * @access private
 		 * @since  2.0
@@ -84,7 +84,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			/**
 			 * Current Version number.
 			 */
-			define( 'OT_VERSION', '2.7.3' );
+			define( 'SB_VERSION', '2.7.3' );
 
 			/**
 			 * For developers: Theme mode.
@@ -96,7 +96,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0
 			 */
-			define( 'OT_THEME_MODE', apply_filters( 'ot_theme_mode', false ) );
+			define( 'SB_THEME_MODE', apply_filters( 'ot_theme_mode', false ) );
 
 			/**
 			 * For developers: Child Theme mode. TODO document
@@ -108,7 +108,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0.15
 			 */
-			define( 'OT_CHILD_THEME_MODE', apply_filters( 'ot_child_theme_mode', false ) );
+			define( 'SB_CHILD_THEME_MODE', apply_filters( 'ot_child_theme_mode', false ) );
 
 			/**
 			 * For developers: Show Pages.
@@ -118,7 +118,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0
 			 */
-			define( 'OT_SHOW_PAGES', apply_filters( 'ot_show_pages', true ) );
+			define( 'SB_SHOW_PAGES', apply_filters( 'ot_show_pages', true ) );
 
 			/**
 			 * For developers: Show Theme Options UI Builder
@@ -128,7 +128,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			define( 'OT_SHOW_OPTIONS_UI', apply_filters( 'ot_show_options_ui', true ) );
+			define( 'SB_SHOW_OPTIONS_UI', apply_filters( 'ot_show_options_ui', true ) );
 
 			/**
 			 * For developers: Show Settings Import
@@ -138,7 +138,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			define( 'OT_SHOW_SETTINGS_IMPORT', apply_filters( 'ot_show_settings_import', true ) );
+			define( 'SB_SHOW_SETTINGS_IMPORT', apply_filters( 'ot_show_settings_import', true ) );
 
 			/**
 			 * For developers: Show Settings Export
@@ -148,7 +148,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			define( 'OT_SHOW_SETTINGS_EXPORT', apply_filters( 'ot_show_settings_export', true ) );
+			define( 'SB_SHOW_SETTINGS_EXPORT', apply_filters( 'ot_show_settings_export', true ) );
 
 			/**
 			 * For developers: Show New Layout.
@@ -158,7 +158,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0.10
 			 */
-			define( 'OT_SHOW_NEW_LAYOUT', apply_filters( 'ot_show_new_layout', true ) );
+			define( 'SB_SHOW_NEW_LAYOUT', apply_filters( 'ot_show_new_layout', true ) );
 
 			/**
 			 * For developers: Show Documentation
@@ -167,7 +167,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			define( 'OT_SHOW_DOCS', apply_filters( 'ot_show_docs', true ) );
+			define( 'SB_SHOW_DOCS', apply_filters( 'ot_show_docs', true ) );
 
 			/**
 			 * For developers: Custom Theme Option page
@@ -177,7 +177,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			define( 'OT_USE_THEME_OPTIONS', apply_filters( 'ot_use_theme_options', true ) );
+			define( 'SB_USE_THEME_OPTIONS', apply_filters( 'ot_use_theme_options', true ) );
 
 			/**
 			 * For developers: Meta Boxes.
@@ -187,7 +187,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0
 			 */
-			define( 'OT_META_BOXES', apply_filters( 'ot_meta_boxes', true ) );
+			define( 'SB_META_BOXES', apply_filters( 'ot_meta_boxes', true ) );
 
 			/**
 			 * For developers: Allow Unfiltered HTML in all the textareas.
@@ -202,7 +202,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.0
 			 */
-			define( 'OT_ALLOW_UNFILTERED_HTML', apply_filters( 'ot_allow_unfiltered_html', false ) );
+			define( 'SB_ALLOW_UNFILTERED_HTML', apply_filters( 'ot_allow_unfiltered_html', false ) );
 
 			/**
 			 * For developers: Post Formats.
@@ -212,31 +212,31 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.4.0
 			 */
-			define( 'OT_POST_FORMATS', apply_filters( 'ot_post_formats', false ) );
+			define( 'SB_POST_FORMATS', apply_filters( 'ot_post_formats', false ) );
 
 			/**
 			 * Check if in theme mode.
 			 *
-			 * If OT_THEME_MODE and OT_CHILD_THEME_MODE is false, set the
+			 * If SB_THEME_MODE and SB_CHILD_THEME_MODE is false, set the
 			 * directory path & URL like any other plugin. Otherwise, use
 			 * the parent or child themes root directory.
 			 *
 			 * @since 2.0
 			 */
-			if ( false === OT_THEME_MODE && false === OT_CHILD_THEME_MODE ) {
-				define( 'OT_DIR', plugin_dir_path( __FILE__ ) );
-				define( 'OT_URL', plugin_dir_url( __FILE__ ) );
+			if ( false === SB_THEME_MODE && false === SB_CHILD_THEME_MODE ) {
+				define( 'SB_DIR', plugin_dir_path( __FILE__ ) );
+				define( 'SB_URL', plugin_dir_url( __FILE__ ) );
 			} else {
-				if ( true === OT_CHILD_THEME_MODE ) {
+				if ( true === SB_CHILD_THEME_MODE ) {
 					$temp_path = explode( get_stylesheet(), str_replace( '\\', '/', dirname( __FILE__ ) ) );
 					$path      = ltrim( end( $temp_path ), '/' );
-					define( 'OT_DIR', trailingslashit( trailingslashit( get_stylesheet_directory() ) . $path ) );
-					define( 'OT_URL', trailingslashit( trailingslashit( get_stylesheet_directory_uri() ) . $path ) );
+					define( 'SB_DIR', trailingslashit( trailingslashit( get_stylesheet_directory() ) . $path ) );
+					define( 'SB_URL', trailingslashit( trailingslashit( get_stylesheet_directory_uri() ) . $path ) );
 				} else {
 					$temp_path = explode( get_template(), str_replace( '\\', '/', dirname( __FILE__ ) ) );
 					$path      = ltrim( end( $temp_path ), '/' );
-					define( 'OT_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) );
-					define( 'OT_URL', trailingslashit( trailingslashit( get_template_directory_uri() ) . $path ) );
+					define( 'SB_DIR', trailingslashit( trailingslashit( get_template_directory() ) . $path ) );
+					define( 'SB_URL', trailingslashit( trailingslashit( get_template_directory_uri() ) . $path ) );
 				}
 			}
 
@@ -245,10 +245,10 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			 *
 			 * @since 2.1
 			 */
-			if ( true === OT_CHILD_THEME_MODE ) {
-				define( 'OT_THEME_URL', get_stylesheet_directory_uri() );
+			if ( true === SB_CHILD_THEME_MODE ) {
+				define( 'SB_THEME_URL', get_stylesheet_directory_uri() );
 			} else {
-				define( 'OT_THEME_URL', get_template_directory_uri() );
+				define( 'SB_THEME_URL', get_template_directory_uri() );
 			}
 		}
 
@@ -269,41 +269,41 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 
 			// Global include files.
 			$files = array(
-				'ot-functions-admin',
-				'ot-functions-option-types',
-				'ot-functions-compat',
-				'class-ot-settings',
+				'sb-functions-admin',
+				'sb-functions-option-types',
+				'sb-functions-compat',
+				'class-sb-settings',
 			);
 
 			// Include the meta box api.
-			if ( true === OT_META_BOXES ) {
-				$files[] = 'class-ot-meta-box';
+			if ( true === SB_META_BOXES ) {
+				$files[] = 'class-sb-meta-box';
 			}
 
 			// Include the post formats api.
-			if ( true === OT_META_BOXES && true === OT_POST_FORMATS ) {
-				$files[] = 'class-ot-post-formats';
+			if ( true === SB_META_BOXES && true === SB_POST_FORMATS ) {
+				$files[] = 'class-sb-post-formats';
 			}
 
 			// Include the settings & docs pages.
-			if ( true === OT_SHOW_PAGES ) {
-				$files[] = 'ot-functions-settings-page';
-				$files[] = 'ot-functions-docs-page';
+			if ( true === SB_SHOW_PAGES ) {
+				$files[] = 'sb-functions-settings-page';
+				$files[] = 'sb-functions-docs-page';
 			}
 
 			// Include the cleanup api.
-			$files[] = 'class-ot-cleanup';
+			$files[] = 'class-sb-cleanup';
 
 			// Require the files.
 			foreach ( $files as $file ) {
-				$this->load_file( OT_DIR . 'includes' . DIRECTORY_SEPARATOR . "{$file}.php" );
+				$this->load_file( SB_DIR . 'includes' . DIRECTORY_SEPARATOR . "{$file}.php" );
 			}
 
 			// Registers the Theme Option page.
 			add_action( 'init', 'ot_register_theme_options_page' );
 
 			// Registers the Settings page.
-			if ( true === OT_SHOW_PAGES ) {
+			if ( true === SB_SHOW_PAGES ) {
 				add_action( 'init', 'ot_register_settings_page' );
 
 				// Global CSS.
@@ -323,13 +323,13 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 		private function includes() {
 
 			$files = array(
-				'ot-functions',
-				'ot-functions-deprecated',
+				'sb-functions',
+				'sb-functions-deprecated',
 			);
 
 			// Require the files.
 			foreach ( $files as $file ) {
-				$this->load_file( OT_DIR . 'includes' . DIRECTORY_SEPARATOR . "{$file}.php" );
+				$this->load_file( SB_DIR . 'includes' . DIRECTORY_SEPARATOR . "{$file}.php" );
 			}
 		}
 
@@ -357,7 +357,7 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 			}
 
 			// Load the Meta Box assets.
-			if ( true === OT_META_BOXES ) {
+			if ( true === SB_META_BOXES ) {
 
 				// Add scripts for metaboxes to post-new.php & post.php.
 				add_action( 'admin_print_scripts-post-new.php', 'ot_admin_scripts', 11 );
@@ -459,11 +459,11 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 <style>
 	@font-face {
 		font-family: "option-tree-font";
-		src:url("<?php echo esc_url_raw( OT_URL ); ?>assets/fonts/option-tree-font.eot");
-		src:url("<?php echo esc_url_raw( OT_URL ); ?>assets/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
-			url("<?php echo esc_url_raw( OT_URL ); ?>assets/fonts/option-tree-font.woff") format("woff"),
-			url("<?php echo esc_url_raw( OT_URL ); ?>assets/fonts/option-tree-font.ttf") format("truetype"),
-			url("<?php echo esc_url_raw( OT_URL ); ?>assets/fonts/option-tree-font.svg#option-tree-font") format("svg");
+		src:url("<?php echo esc_url_raw( SB_URL ); ?>assets/fonts/option-tree-font.eot");
+		src:url("<?php echo esc_url_raw( SB_URL ); ?>assets/fonts/option-tree-font.eot?#iefix") format("embedded-opentype"),
+			url("<?php echo esc_url_raw( SB_URL ); ?>assets/fonts/option-tree-font.woff") format("woff"),
+			url("<?php echo esc_url_raw( SB_URL ); ?>assets/fonts/option-tree-font.ttf") format("truetype"),
+			url("<?php echo esc_url_raw( SB_URL ); ?>assets/fonts/option-tree-font.svg#option-tree-font") format("svg");
 		font-weight: normal;
 		font-style: normal;
 	}
@@ -732,5 +732,5 @@ if ( ! class_exists( 'OT_Loader' ) && defined( 'ABSPATH' ) ) {
 	 *
 	 * @since 2.0
 	 */
-	new OT_Loader();
+	new Switchboard();
 }

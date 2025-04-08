@@ -5,7 +5,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -200,7 +200,7 @@ if ( ! function_exists( 'ot_type_import_data' ) ) {
 		// Description.
 		echo '<div class="description">';
 
-		if ( OT_SHOW_SETTINGS_IMPORT ) {
+		if ( SB_SHOW_SETTINGS_IMPORT ) {
 			echo '<p>' . esc_html__( 'Only after you\'ve imported the Settings should you try and update your Theme Options.', 'option-tree' ) . '</p>';
 		}
 
@@ -243,7 +243,7 @@ if ( ! function_exists( 'ot_type_import_layouts' ) ) {
 		// Description.
 		echo '<div class="description">';
 
-		if ( OT_SHOW_SETTINGS_IMPORT ) {
+		if ( SB_SHOW_SETTINGS_IMPORT ) {
 			echo '<p>' . esc_html__( 'Only after you\'ve imported the Settings should you try and update your Layouts.', 'option-tree' ) . '</p>';
 		}
 
@@ -436,7 +436,7 @@ if ( ! function_exists( 'ot_type_modify_layouts' ) ) {
 		echo '<p>' . esc_html__( 'As well, you can activate, remove, and drag & drop the order; all situations require you to click "Save Layouts" for the changes to be applied.', 'option-tree' ) . '</p>';
 		echo '<p>' . esc_html__( 'When you create a new layout it will become active and any changes made to the Theme Options will be applied to it. If you switch back to a different layout immediately after creating a new layout that new layout will have a snapshot of the current Theme Options data attached to it.', 'option-tree' ) . '</p>';
 
-		if ( OT_SHOW_DOCS ) {
+		if ( SB_SHOW_DOCS ) {
 			/* translators: %s: visual path to layouts overview */
 			$string = esc_html__( 'Visit %s to see a more in-depth description of what layouts are and how to use them.', 'option-tree' );
 			echo '<p>' . sprintf( $string, '<code>' . esc_html__( 'Switchboard->Documentation->Layouts Overview', 'option-tree' ) . '</code>' ) . '</p>'; // phpcs:ignore

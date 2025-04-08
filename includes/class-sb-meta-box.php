@@ -5,18 +5,18 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-if ( ! class_exists( 'OT_Meta_Box' ) ) {
+if ( ! class_exists( 'SB_Meta_Box' ) ) {
 
 	/**
 	 * Switchboard Meta Box class.
 	 *
 	 * This class loads all the methods and helpers specific to build a meta box.
 	 */
-	class OT_Meta_Box {
+	class SB_Meta_Box {
 
 		/**
 		 * Stores the meta box config array.
@@ -358,7 +358,7 @@ if ( ! function_exists( 'ot_register_meta_box' ) ) {
 	/**
 	 * This method instantiates the meta box class & builds the UI.
 	 *
-	 * @uses OT_Meta_Box()
+	 * @uses SB_Meta_Box()
 	 *
 	 * @param array $args Meta box arguments.
 	 *
@@ -370,6 +370,6 @@ if ( ! function_exists( 'ot_register_meta_box' ) ) {
 			return;
 		}
 
-		new OT_Meta_Box( $args );
+		new SB_Meta_Box( $args );
 	}
 }

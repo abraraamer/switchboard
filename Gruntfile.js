@@ -15,7 +15,7 @@ module.exports = function( grunt ) {
 					'includes/**',
 					'composer.json',
 					'LICENSE',
-					'ot-loader.php',
+					'switchboard.php',
 					'readme.txt'
 				],
 				dest: 'build',
@@ -31,16 +31,6 @@ module.exports = function( grunt ) {
 			}
 		},
 
-		// Deploys a git Repo to the WordPress SVN repo
-		wp_deploy: {
-			deploy: {
-				options: {
-					plugin_slug: 'option-tree',
-					build_dir: 'build',
-					plugin_main_file: 'ot-loader.php'
-				}
-			}
-		}
 	} );
 
 	// Load tasks

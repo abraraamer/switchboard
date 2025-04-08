@@ -62,7 +62,7 @@
 /**
  * Switchboard in Theme Mode
  */
-# require( trailingslashit( get_template_directory() ) . 'option-tree/ot-loader.php' );
+# require( trailingslashit( get_template_directory() ) . 'switchboard/switchboard.php' );
 
 /**
  * Theme Options

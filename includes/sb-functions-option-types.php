@@ -7,7 +7,7 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
@@ -118,7 +118,7 @@ if ( ! function_exists( 'ot_type_background' ) ) {
 
 			echo '<div class="option-tree-ui-colorpicker-input-wrap">';
 
-			echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
+			echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
 
 			$background_color = isset( $field_value['background-color'] ) ? $field_value['background-color'] : '';
 
@@ -351,7 +351,7 @@ if ( ! function_exists( 'ot_type_border' ) ) {
 
 			echo '<div class="option-tree-ui-colorpicker-input-wrap">';
 
-			echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
+			echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
 
 			$color = isset( $field_value['color'] ) ? $field_value['color'] : '';
 
@@ -455,7 +455,7 @@ if ( ! function_exists( 'ot_type_box_shadow' ) ) {
 
 			echo '<div class="option-tree-ui-colorpicker-input-wrap">';
 
-			echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
+			echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
 
 			$color = isset( $field_value['color'] ) ? $field_value['color'] : '';
 
@@ -652,7 +652,7 @@ if ( ! function_exists( 'ot_type_colorpicker' ) ) {
 		echo '<div class="option-tree-ui-colorpicker-input-wrap">';
 
 		// Colorpicker JS.
-		echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '"); });</script>';
+		echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '"); });</script>';
 
 		// Input.
 		echo '<input type="text" name="' . esc_attr( $field_name ) . '" id="' . esc_attr( $field_id ) . '" value="' . esc_attr( $field_value ) . '" class="hide-color-picker ' . esc_attr( $field_class ) . '"' . ( ! empty( $field_std ) ? ' data-default-color="' . esc_attr( $field_std ) . '"' : '' ) . ' />';
@@ -897,7 +897,7 @@ if ( ! function_exists( 'ot_type_date_picker' ) ) {
 		echo '<div class="format-setting type-date-picker ' . ( $has_desc ? 'has-desc' : 'no-desc' ) . '">';
 
 		// Date picker JS.
-		echo '<script>jQuery(document).ready(function($) { OT_UI.bind_date_picker("' . esc_attr( $field_id ) . '", "' . esc_attr( $date_format ) . '"); });</script>';
+		echo '<script>jQuery(document).ready(function($) { SB_UI.bind_date_picker("' . esc_attr( $field_id ) . '", "' . esc_attr( $date_format ) . '"); });</script>';
 
 		// Description.
 		echo $has_desc ? '<div class="description">' . wp_kses_post( htmlspecialchars_decode( $field_desc ) ) . '</div>' : '';
@@ -951,7 +951,7 @@ if ( ! function_exists( 'ot_type_date_time_picker' ) ) {
 		echo '<div class="format-setting type-date-time-picker ' . ( $has_desc ? 'has-desc' : 'no-desc' ) . '">';
 
 		// Date time picker JS.
-		echo '<script>jQuery(document).ready(function($) { OT_UI.bind_date_time_picker("' . esc_attr( $field_id ) . '", "' . esc_attr( $date_format ) . '"); });</script>';
+		echo '<script>jQuery(document).ready(function($) { SB_UI.bind_date_time_picker("' . esc_attr( $field_id ) . '", "' . esc_attr( $date_format ) . '"); });</script>';
 
 		// Description.
 		echo $has_desc ? '<div class="description">' . wp_kses_post( htmlspecialchars_decode( $field_desc ) ) . '</div>' : '';
@@ -1358,7 +1358,7 @@ if ( ! function_exists( 'ot_type_link_color' ) ) {
 				echo '<label for="' . esc_attr( $field_id ) . '-picker-' . esc_attr( $type ) . '" class="option-tree-ui-colorpicker-label">' . esc_attr( $label ) . '</label>';
 
 				// Colorpicker JS.
-				echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker-' . esc_attr( $type ) . '"); });</script>';
+				echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker-' . esc_attr( $type ) . '"); });</script>';
 
 				// Set color.
 				$color = isset( $field_value[ $type ] ) ? esc_attr( $field_value[ $type ] ) : '';
@@ -2008,8 +2008,8 @@ if ( ! function_exists( 'ot_type_radio_image' ) ) {
 		// Build radio image.
 		foreach ( (array) $field_choices as $key => $choice ) {
 
-			$src = str_replace( 'OT_URL', OT_URL, $choice['src'] );
-			$src = str_replace( 'OT_THEME_URL', OT_THEME_URL, $src );
+			$src = str_replace( 'SB_URL', SB_URL, $choice['src'] );
+			$src = str_replace( 'SB_THEME_URL', SB_THEME_URL, $src );
 
 			// Make radio image source filterable.
 			$src = apply_filters( 'ot_type_radio_image_src', $src, $field_id );
@@ -2973,7 +2973,7 @@ if ( ! function_exists( 'ot_type_typography' ) ) {
 			echo '<div class="option-tree-ui-colorpicker-input-wrap">';
 
 			// Colorpicker JS.
-			echo '<script>jQuery(document).ready(function($) { OT_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
+			echo '<script>jQuery(document).ready(function($) { SB_UI.bind_colorpicker("' . esc_attr( $field_id ) . '-picker"); });</script>';
 
 			// Set background color.
 			$background_color = isset( $field_value['font-color'] ) ? esc_attr( $field_value['font-color'] ) : '';

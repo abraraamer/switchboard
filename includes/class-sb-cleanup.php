@@ -5,18 +5,18 @@
  * @package Switchboard
  */
 
-if ( ! defined( 'OT_VERSION' ) ) {
+if ( ! defined( 'SB_VERSION' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
-if ( ! class_exists( 'OT_Cleanup' ) ) {
+if ( ! class_exists( 'SB_Cleanup' ) ) {
 
 	/**
 	 * Switchboard Cleanup class.
 	 *
 	 * This class loads all the Switchboard Cleanup methods and helpers.
 	 */
-	class OT_Cleanup {
+	class SB_Cleanup {
 
 		/**
 		 * Class constructor.
@@ -294,4 +294,4 @@ if ( ! class_exists( 'OT_Cleanup' ) ) {
 	}
 }
 
-new OT_Cleanup();
+new SB_Cleanup();
